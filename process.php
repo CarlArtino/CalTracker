@@ -10,16 +10,20 @@ $update = false;
 
 if (isset($_POST['save'])) {
 
-    $id = $_POST['isbn'];
-    $title = $_POST['title'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-    $flag = $_POST['flag'];
+    $foodName = $_POST['fName'];
+    $foodType = $_POST['fType'];
+    $foodBrand = $_POST['fBrand'];
+    $calories = $_POST['fCalories'];
+    $fat = $_POST['fFat'];
+	$cholesterol = $_POST['fCholesterol'];
+	$sodium = $_POST['fSodium'];
+	$carbs = $_POST['fCarbs'];
+	$protein = $_POST['fProtein'];
 
-    $mysqli->query("INSERT INTO books (id, title, price, quantity, flag) VALUES('$id', '$title', '$price', '$quantity', '$flag')") or
-        die($mysqli->error);
+    $mysqli->query("INSERT INTO foods (foodName, foodType, foodBrand, calories, fat, cholesterol, sodium, carbs, protein) 
+					VALUES('$foodName', '$foodType', '$foodBrand', '$calories', '$fat', '$cholesterol', '$sodium', '$carbs', '$protein')") or die($mysqli->error);
 
-    $_SESSION['message'] = "Book has been saved!";
+    $_SESSION['message'] = "Food has been saved!";
     $_SESSION['msg_type'] = "success";
 
     header("location: CalTracker.php");
@@ -27,17 +31,17 @@ if (isset($_POST['save'])) {
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $mysqli->query("DELETE FROM books WHERE id=$id") or die($mysqli->error());
+    $mysqli->query("DELETE FROM foods WHERE id=$id") or die($mysqli->error());
 
-    $_SESSION['message'] = "Book has been deleted!";
+    $_SESSION['message'] = "Food has been deleted!";
     $_SESSION['msg_type'] = "danger";
 
     header("location: CalTracker.php");
 }
 
-if (isset($_GET['edit'])) {
+/*if (isset($_GET['edit'])) {
     $id = $_GET['edit'];
-    $result = $mysqli->query("SELECT * FROM books WHERE id=$id") or die($mysqli->erorr());
+    $result = $mysqli->query("SELECT * FROM foods WHERE id=$id") or die($mysqli->erorr());
     $update = true;
 
     if($result->num_rows) {
@@ -56,4 +60,4 @@ if (isset($_POST['update'])) {
     $_SESSION['msg_type'] = "warning";
 
     header('location: CalTracker.php');
-}
+}*/

@@ -27,7 +27,7 @@
     <div class="container">
     <?php
         $mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
-        $result = $mysqli->query("SELECT * FROM books") or die($mysqli_error->error);
+        $result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
         //pre_r($result->fetch_assoc());
     ?>
 
@@ -35,11 +35,16 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ISBN</th>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Status</th>
+						<th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Brand</th>
+                        <th>Calories</th>
+                        <th>Fat</th>
+						<th>Cholesterol</th>
+						<th>Sodium</th>
+						<th>Carbs</th>
+						<th>Protein</th>
                         <th colspan="2">Action</th>
                     </tr>
                 </thread>
@@ -47,19 +52,21 @@
                 <?php   
                     while ($row = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?php echo $row['id'] ?></td>
-                            <td><?php echo $row['title'] ?></td>
-                            <td><?php echo $row['price'] ?></td>
-                            <td><?php echo $row['quantity'] ?></td>
-                            <td><?php if ($row['flag'] == 1) 
-                                        echo "Discontinued"; 
-                                      else 
-                                        echo "Available";
-                                ?></td>
+                            <td><?php echo $row['foodID'] ?></td>
+                            <td><?php echo $row['foodName'] ?></td>
+                            <td><?php echo $row['foodType'] ?></td>
+                            <td><?php echo $row['foodBrand'] ?></td>
+							<td><?php echo $row['calories'] ?></td>
+							<td><?php echo $row['fat'] ?></td>
+							<td><?php echo $row['cholesterol'] ?></td>
+							<td><?php echo $row['sodium'] ?></td>
+							<td><?php echo $row['carbs'] ?></td>
+							<td><?php echo $row['protein'] ?></td>
+               
                             <td>
-                                <a href="CalTracker.php?edit=<?php echo $row['id']; ?>"
+                                <a href="CalTracker.php?edit=<?php echo $row['foodID']; ?>"
                                     class="btn btn-info">Edit</a>
-                                <a href="process.php?delete=<?php echo $row['id']; ?>"
+                                <a href="process.php?delete=<?php echo $row['foodID']; ?>"
                                     class="btn btn-danger">Delete</a>
                         </tr>
                     <?php endwhile; ?>
@@ -75,42 +82,83 @@
                 <?php
                 if ($update == false):
                 ?>
-                <label>ISBN</label> <br>
-                <input type="text" name="isbn" class="form-control" placeholder="Enter ISBN (no dash)">
+                <label>Name</label> <br>
+                <input type="text" name="fName" class="form-control" placeholder="Enter name">
                 <?php endif; ?>
+            </div>
+			
+			<div class="form-group">
+				<?php
+                if ($update == false):
+                ?>
+				<label for="exampleFormControlSelect1">Type</label>
+				<select class="form-control" name = "fType" id="exampleFormControlSelect1">
+				<option value="Fruit">Fruit</option>
+				<option value="Vegetable">Vegetable</option>
+				<option value="Meat">Meat</option>
+				<option value="Grain">Grain</option>
+				<option value="Dairy">Dairy</option>
+				<option value="Junk">Junk</option>
+				</select>
+				<?php endif; ?>
+			</div>
+
+            <div class="form-group">
+                <label>Brand</label> <br>
+                <input type="text" name="fBrand" class="form-control" placeholder="Enter brand">
             </div>
 
             <div class="form-group">
                 <?php
                 if ($update == false):
                 ?>
-                <label>Title</label> <br>
-                <input type="text" name="title" class="form-control" placeholder="Enter book title">
+                <label>Calories</label> <br>
+                <input type="text" name="fCalories" class="form-control" placeholder="Enter calories">
                 <?php endif; ?>
             </div>
-
-            <div class="form-group">
-                <label>Price</label> <br>
-                <input type="text" name="price" 
-                        value="<?php echo $price; ?>" class="form-control" placeholder="Enter book price">
-            </div>
-
-            <div class="form-group">
+			
+			<div class="form-group">
                 <?php
                 if ($update == false):
                 ?>
-                <label>Quantity</label> <br>
-                <input type="text" name="quantity" class="form-control" placeholder="Enter book quantity">
+                <label>Fat</label> <br>
+                <input type="text" name="fFat" class="form-control" placeholder="Enter fat">
                 <?php endif; ?>
             </div>
-            
-            <div class="custom-control custom-checkbox">
+			
+			<div class="form-group">
                 <?php
                 if ($update == false):
                 ?>
-                <input type="hidden" class="form-check-input" name="flag" id="customCheck1" value="0" />
-                <input type="checkbox" class="form-check-input" name="flag" id="customCheck1" value="1">
-                <label> Book is discontinued</label>
+                <label>Cholesterol</label> <br>
+                <input type="text" name="fCholesterol" class="form-control" placeholder="Enter cholesterol">
+                <?php endif; ?>
+            </div>
+			
+			<div class="form-group">
+                <?php
+                if ($update == false):
+                ?>
+                <label>Sodium</label> <br>
+                <input type="text" name="fSodium" class="form-control" placeholder="Enter sodium">
+                <?php endif; ?>
+            </div>
+			
+			<div class="form-group">
+                <?php
+                if ($update == false):
+                ?>
+                <label>Carbs</label> <br>
+                <input type="text" name="fCarbs" class="form-control" placeholder="Enter carbs">
+                <?php endif; ?>
+            </div>
+			
+			<div class="form-group">
+                <?php
+                if ($update == false):
+                ?>
+                <label>Protein</label> <br>
+                <input type="text" name="fProtein" class="form-control" placeholder="Enter protein">
                 <?php endif; ?>
             </div>
             
