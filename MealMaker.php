@@ -32,6 +32,7 @@
 		    }
 		?>
     <div class="container">
+    	<h2> Your Current Meal </h2>
         <div class="row justify-content-center">
             <table class="table">
                 <thead>
@@ -76,12 +77,10 @@
 				?>
             </table>
         </div>
+        <form action="CalTracker.php" method="post" id="addFood"></form>
+
+		<button type="submit" form="addFood" value="Submit">Add another food</button>
     </div>
-    <form action="CalTracker.php" method="post" id="addFood">
-
-	</form>
-
-	<button type="submit" form="addFood" value="Submit">Add another food</button>
 	</body>
 	
 </html>
