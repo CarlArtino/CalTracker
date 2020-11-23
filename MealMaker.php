@@ -21,16 +21,26 @@
 	<body>
 		<?php 
             // Test isset for session array. set if not
+
 		    $setArray = isset($_SESSION["currentMeal"]);
 		    if (!$setArray) $_SESSION["currentMeal"] = array();
 
 		    // Test if session variable from caltracker isset. append and null if so.
+
 		    $adding = isset($_POST["ateFood"]);
 		    if ($adding) {
 		    	array_push($_SESSION["currentMeal"], $_POST["ateFood"]);
 		    }
 
 		    // Add code to print list under here
+
+            $totCal = 0;   // init total calories
+            $totFat = 0;   // init total fat
+            $totChol = 0;  // init total cholesterol
+            $totSod = 0;   // init total sodium
+            $totCarb = 0;  // init total carbs
+            $totProt = 0;  // init total protein
+
 		    if ($setArray || $adding) // Tests if it has a list to display. 
 		    {
 		    	for ($i=0; $i<count($_SESSION["currentMeal"]); $i++){
