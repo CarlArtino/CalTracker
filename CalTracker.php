@@ -30,9 +30,9 @@
         $result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
         //pre_r($result->fetch_assoc());
 		
-		echo $_SESSION["sampleSessionVar"];
+		// echo $_SESSION["sampleSessionVar"];
 		
-			$_SESSION["sampleSessionVar"] = "I changed this var";
+		// 	$_SESSION["sampleSessionVar"] = "I changed this var";
 		
     ?>
 	
@@ -71,7 +71,7 @@
 							<td><?php echo $row['protein'] ?></td>
                
                             <td>
-                                <button type="submit" form="addFood" value="Submit"
+                                <button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
                                     class="btn btn-info">Add</button>
                                 <a href="process.php?delete=<?php echo $row['foodID']; ?>"
                                     class="btn btn-danger">Delete</a>

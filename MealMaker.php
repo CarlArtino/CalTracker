@@ -20,12 +20,26 @@
 	
 	<body>
 		<?php 
+            // Test isset for session array. set if not
+		    $setArray = isset($_SESSION["currentMeal"]);
+		    if (!$setArray) $_SESSION["currentMeal"] = array();
+
+		    // Test if session variable from caltracker isset. append and null if so.
+		    $adding = isset($_POST["ateFood"]);
+		    if ($adding) {
+		    	array_push($_SESSION["currentMeal"], $_POST["ateFood"]);
+
+		    	for ($i=0; $i<count($_SESSION["currentMeal"]); $i++){
+		    		echo $_SESSION["currentMeal"][$i];
+		    	}
+		    }
+
 			//if ($_SESSION["sampleSessionVar"] == "")
-			echo $_SESSION["sampleSessionVar"];
+			// echo $_SESSION["sampleSessionVar"];
 			
-				$_SESSION["sampleSessionVar"] = "Session Variable Example";
-			echo "<br>";
-			echo $_SESSION["sampleSessionVar"];
+			// 	$_SESSION["sampleSessionVar"] = "Session Variable Example";
+			// echo "<br>";
+			// echo $_SESSION["sampleSessionVar"];
 		?>
 	</body>
 	
