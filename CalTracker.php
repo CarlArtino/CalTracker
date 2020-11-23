@@ -69,13 +69,10 @@
                             <td>
                                 <button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
                                     class="btn btn-info">Add</button>
-                                <a href="process.php?delete=<?php echo $row['foodID']; ?>"
-                                    class="btn btn-danger">Delete</a>
                         </tr>
                     <?php endwhile; ?>
             </table>
         </div>
-
 
     <div class="row justify-content-center"> 
         <form action="process.php" method="POST">
