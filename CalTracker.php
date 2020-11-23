@@ -30,10 +30,6 @@
         $result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
         //pre_r($result->fetch_assoc());
 		
-		// echo $_SESSION["sampleSessionVar"];
-		
-		// 	$_SESSION["sampleSessionVar"] = "I changed this var";
-		
     ?>
 	
         <div class="row justify-content-center">

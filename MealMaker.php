@@ -67,13 +67,6 @@
 				    		echo $_SESSION["currentMeal"][$i];
 				    	}
 				    }
-
-					//if ($_SESSION["sampleSessionVar"] == "")
-					// echo $_SESSION["sampleSessionVar"];
-					
-					// 	$_SESSION["sampleSessionVar"] = "Session Variable Example";
-					// echo "<br>";
-					// echo $_SESSION["sampleSessionVar"];
 				?>
             </table>
         </div>
