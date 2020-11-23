@@ -34,15 +34,15 @@
 
 		    // Add code to print list under here
 
-            $totCal = 0;   // init total calories
-            $totFat = 0;   // init total fat
-            $totChol = 0;  // init total cholesterol
-            $totSod = 0;   // init total sodium
-            $totCarb = 0;  // init total carbs
-            $totProt = 0;  // init total protein
-
 		    if ($setArray || $adding) // Tests if it has a list to display. 
 		    {
+		    	$totCal = 0;   // init total calories
+                $totFat = 0;   // init total fat
+                $totChol = 0;  // init total cholesterol
+                $totSod = 0;   // init total sodium
+                $totCarb = 0;  // init total carbs
+                $totProt = 0;  // init total protein
+
 		    	for ($i=0; $i<count($_SESSION["currentMeal"]); $i++){
 		    		echo $_SESSION["currentMeal"][$i];
 		    	}
