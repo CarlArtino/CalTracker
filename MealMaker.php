@@ -20,6 +20,11 @@
 	
 	<body>
 		<?php 
+			// Database Connection
+
+			$mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
+            $result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
+
             // Test isset for session array. set if not
 
 		    $setArray = isset($_SESSION["currentMeal"]);
