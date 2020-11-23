@@ -28,7 +28,11 @@
 		    $adding = isset($_POST["ateFood"]);
 		    if ($adding) {
 		    	array_push($_SESSION["currentMeal"], $_POST["ateFood"]);
+		    }
 
+		    // Add code to print list under here
+		    if ($setArray || $adding) // Tests if it has a list to display. 
+		    {
 		    	for ($i=0; $i<count($_SESSION["currentMeal"]); $i++){
 		    		echo $_SESSION["currentMeal"][$i];
 		    	}
