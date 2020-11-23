@@ -23,6 +23,23 @@
         ?>
     </div>
     <?php endif ?>
+	
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+		<a class="navbar-brand" href="#">CalTracker</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-md-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="http://localhost/isp/CalTracker/MealMaker.php">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
     <div class="container">
 		<?php
@@ -32,6 +49,7 @@
 			
 		?>
 		
+			<span style="padding-left:20px">
 			<div class="row justify-content-center">
 				<table class="table">
 					<thead>
