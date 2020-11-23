@@ -37,7 +37,6 @@
             <table class="table">
                 <thead>
                     <tr>
-						<th>ID</th>
                         <th>Name</th>
                         <th>Type</th>
                         <th>Brand</th>
@@ -47,7 +46,6 @@
 						<th>Sodium</th>
 						<th>Carbs</th>
 						<th>Protein</th>
-                        <th colspan="2">Action</th>
                     </tr>
                 </thread>
 
