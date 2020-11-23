@@ -36,7 +36,9 @@
 		    if ($adding) {
 		    	array_push($_SESSION["currentMeal"], $_POST["ateFood"]);
 		    }
+		?>
 
+		<?php
 		    // Add code to print list under here
 
 		    if ($setArray || $adding) // Tests if it has a list to display. 
