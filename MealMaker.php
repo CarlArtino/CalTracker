@@ -77,9 +77,20 @@
 		                $totProt = 0;  // init total protein
 
 				    	for ($i=0; $i<count($_SESSION["currentMeal"]); $i++){
+
 				    		$mealIndex = $_SESSION["currentMeal"][$i];
-				    		$result = $mysqli->query("SELECT * FROM foods WHERE foodId=$mealIndex") or die($mysqli_error->error);
-				    		$row = mysqli_fetch_array($result); ?>
+				    		$result = $mysqli->query("SELECT * FROM foods WHERE foodId=$mealIndex") or die($mysqli_error->error); // must get specific row every time
+				    		$row = mysqli_fetch_array($result); 
+
+				    		// Increment totals
+				    		$totCal += $row['calories'];
+				    		$totFat += $row['fat'];
+				    		$totChol += $row['cholesterol'];
+				    		$totSod += $row['sodium'];
+				    		$totCarb += $row['carbs'];
+				    		$totProt += $row['protein'];
+				    		?>
+
 				    		<tr>
 								<td><?php echo $row['foodName'] ?></td>
 								<td><?php echo $row['foodType'] ?></td>
@@ -92,7 +103,19 @@
 								<td><?php echo $row['protein'] ?></td>
 							</tr>
 							<?php
-				    	}
+				    	} ?>
+				    	<tr>
+							<td>Total</td>
+							<td></td>
+							<td></td>
+							<td><?php echo $totCal ?></td>
+							<td><?php echo $totFat ?></td>
+							<td><?php echo $totChol ?></td>
+							<td><?php echo $totSod ?></td>
+							<td><?php echo $totCarb ?></td>
+							<td><?php echo $totProt ?></td>
+						</tr>
+				    	<?php
 				    }
 				?>
             </table>
