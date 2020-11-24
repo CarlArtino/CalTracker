@@ -11,9 +11,9 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-	
+
 	<body>
-		<?php 
+		<?php
 			// Database Connection
 
 			$mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
@@ -30,7 +30,7 @@
 		    	array_push($_SESSION["currentMeal"], $_POST["ateFood"]);
 		    }
 		?>
-		
+
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
 		<a class="navbar-brand" href="#">CalTracker</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,12 +39,12 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-md-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#">About</a>
+					<a class="nav-link" href="http://localhost/isp/CalTracker/help.php">About</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
-		
+
 	<span style="padding-left:20px">
     <div class="container">
     	<h2> Your Current Meal </h2>
@@ -67,7 +67,7 @@
 				<?php
 				    // Add code to print list under here
 
-				    if ($setArray || $adding) // Tests if it has a list to display. 
+				    if ($setArray || $adding) // Tests if it has a list to display.
 				    {
 				    	$totCal = 0;   // init total calories
 		                $totFat = 0;   // init total fat
@@ -80,7 +80,7 @@
 
 				    		$mealIndex = $_SESSION["currentMeal"][$i];
 				    		$result = $mysqli->query("SELECT * FROM foods WHERE foodId=$mealIndex") or die($mysqli_error->error); // must get specific row every time
-				    		$row = mysqli_fetch_array($result); 
+				    		$row = mysqli_fetch_array($result);
 
 				    		// Increment totals
 				    		$totCal += $row['calories'];
@@ -125,5 +125,5 @@
 		<button type="submit" form="addFood" value="Submit">Add another food</button>
     </div>
 	</body>
-	
+
 </html>

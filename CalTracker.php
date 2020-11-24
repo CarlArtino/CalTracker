@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Add Food</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,18 +12,18 @@
     <body>
     <?php require_once 'process.php'; ?>
 
-    <?php 
-    
+    <?php
+
     if (isset($_SESSION['message'])): ?>
 
     <div class="alert alert-<?=$_SESSION['msg_type']?>">
-        <?php   
+        <?php
             echo $_SESSION['message'];
             unset($_SESSION['message']);
         ?>
     </div>
     <?php endif ?>
-	
+
 	<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
 		<a class="navbar-brand" href="#">CalTracker</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
 					<a class="nav-link" href="http://localhost/isp/CalTracker/MealMaker.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">About</a>
+					<a class="nav-link" href="http://localhost/isp/CalTracker/help.php">About</a>
 				</li>
 			</ul>
 		</div>
@@ -46,9 +46,9 @@
 			$mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
 			$result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
 			//pre_r($result->fetch_assoc());
-			
+
 		?>
-		
+
 			<span style="padding-left:20px">
 			<div class="row justify-content-center">
 				<table class="table">
@@ -70,7 +70,7 @@
 
 					<form action="MealMaker.php" method="post" id="addFood"></form>
 
-					<?php   
+					<?php
 						while ($row = $result->fetch_assoc()): ?>
 							<tr>
 								<td><?php echo $row['foodID'] ?></td>
@@ -83,7 +83,7 @@
 								<td><?php echo $row['sodium'] ?></td>
 								<td><?php echo $row['carbs'] ?></td>
 								<td><?php echo $row['protein'] ?></td>
-				   
+
 								<td>
 									<button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
 										class="btn btn-info">Add</button>
@@ -92,12 +92,12 @@
 				</table>
 			</div>
 
-		<div class="row justify-content-center"> 
+		<div class="row justify-content-center">
 			<form action="process.php" method="POST">
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
-				
+
 				<div class="form-row">
-					<div class="col">	
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -107,8 +107,8 @@
 							<?php endif; ?>
 						</div>
 					</div>
-					
-					<div class="col">	
+
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -126,14 +126,14 @@
 						</div>
 					</div>
 				</div>
-		
+
 				<div class="form-group">
 					<label>Brand</label> <br>
 					<input type="text" name="fBrand" class="form-control" placeholder="Enter brand">
 				</div>
-				
+
 				<div class="form-row">
-					<div class="col">	
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -144,7 +144,7 @@
 						</div>
 					</div>
 
-					<div class="col">	
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -155,9 +155,9 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="form-row">
-					<div class="col">	
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -167,8 +167,8 @@
 							<?php endif; ?>
 						</div>
 					</div>
-				
-					<div class="col">	
+
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -179,9 +179,9 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="form-row">
-					<div class="col">	
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -191,8 +191,8 @@
 							<?php endif; ?>
 						</div>
 					</div>
-				
-					<div class="col">	
+
+					<div class="col">
 						<div class="form-group">
 							<?php
 							if ($update == false):
@@ -203,7 +203,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<br>
 					<?php
@@ -223,6 +223,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+
     </body>
 </html>
