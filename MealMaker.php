@@ -17,7 +17,6 @@
 			// Database Connection
 
 			$mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
-            $result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
 
             // Test isset for session array. set if not
 
@@ -78,7 +77,21 @@
 		                $totProt = 0;  // init total protein
 
 				    	for ($i=0; $i<count($_SESSION["currentMeal"]); $i++){
-				    		echo $_SESSION["currentMeal"][$i];
+				    		$mealIndex = $_SESSION["currentMeal"][$i];
+				    		$result = $mysqli->query("SELECT * FROM foods WHERE foodId=$mealIndex") or die($mysqli_error->error);
+				    		$row = mysqli_fetch_array($result); ?>
+				    		<tr>
+								<td><?php echo $row['foodName'] ?></td>
+								<td><?php echo $row['foodType'] ?></td>
+								<td><?php echo $row['foodBrand'] ?></td>
+								<td><?php echo $row['calories'] ?></td>
+								<td><?php echo $row['fat'] ?></td>
+								<td><?php echo $row['cholesterol'] ?></td>
+								<td><?php echo $row['sodium'] ?></td>
+								<td><?php echo $row['carbs'] ?></td>
+								<td><?php echo $row['protein'] ?></td>
+							</tr>
+							<?php
 				    	}
 				    }
 				?>
