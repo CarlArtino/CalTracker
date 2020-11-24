@@ -23,160 +23,199 @@
         ?>
     </div>
     <?php endif ?>
+	
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+		<a class="navbar-brand" href="#">CalTracker</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-md-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="http://localhost/isp/CalTracker/MealMaker.php">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
     <div class="container">
-    <?php
-        $mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
-        $result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
-        //pre_r($result->fetch_assoc());
-		
-    ?>
-	
-        <div class="row justify-content-center">
-            <table class="table">
-                <thead>
-                    <tr>
-						<th>ID</th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Brand</th>
-                        <th>Calories</th>
-                        <th>Fat</th>
-						<th>Cholesterol</th>
-						<th>Sodium</th>
-						<th>Carbs</th>
-						<th>Protein</th>
-                        <th colspan="2">Action</th>
-                    </tr>
-                </thread>
-
-				<form action="MealMaker.php" method="post" id="addFood"></form>
-
-                <?php   
-                    while ($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><?php echo $row['foodID'] ?></td>
-                            <td><?php echo $row['foodName'] ?></td>
-                            <td><?php echo $row['foodType'] ?></td>
-                            <td><?php echo $row['foodBrand'] ?></td>
-							<td><?php echo $row['calories'] ?></td>
-							<td><?php echo $row['fat'] ?></td>
-							<td><?php echo $row['cholesterol'] ?></td>
-							<td><?php echo $row['sodium'] ?></td>
-							<td><?php echo $row['carbs'] ?></td>
-							<td><?php echo $row['protein'] ?></td>
-               
-                            <td>
-                                <button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
-                                    class="btn btn-info">Add</button>
-                                <a href="process.php?delete=<?php echo $row['foodID']; ?>"
-                                    class="btn btn-danger">Delete</a>
-                        </tr>
-                    <?php endwhile; ?>
-            </table>
-        </div>
-
-
-    <div class="row justify-content-center"> 
-        <form action="process.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
-            
-            <div class="form-group">
-                <?php
-                if ($update == false):
-                ?>
-                <label>Name</label> <br>
-                <input type="text" name="fName" class="form-control" placeholder="Enter name">
-                <?php endif; ?>
-            </div>
+		<?php
+			$mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
+			$result = $mysqli->query("SELECT * FROM foods") or die($mysqli_error->error);
+			//pre_r($result->fetch_assoc());
 			
-			<div class="form-group">
-				<?php
-                if ($update == false):
-                ?>
-				<label for="exampleFormControlSelect1">Type</label>
-				<select class="form-control" name = "fType" id="exampleFormControlSelect1">
-				<option value="Fruit">Fruit</option>
-				<option value="Vegetable">Vegetable</option>
-				<option value="Meat">Meat</option>
-				<option value="Grain">Grain</option>
-				<option value="Dairy">Dairy</option>
-				<option value="Junk">Junk</option>
-				</select>
-				<?php endif; ?>
+		?>
+		
+			<span style="padding-left:20px">
+			<div class="row justify-content-center">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Brand</th>
+							<th>Calories</th>
+							<th>Fat</th>
+							<th>Cholesterol</th>
+							<th>Sodium</th>
+							<th>Carbs</th>
+							<th>Protein</th>
+							<th colspan="2">Action</th>
+						</tr>
+					</thread>
+
+					<form action="MealMaker.php" method="post" id="addFood"></form>
+
+					<?php   
+						while ($row = $result->fetch_assoc()): ?>
+							<tr>
+								<td><?php echo $row['foodID'] ?></td>
+								<td><?php echo $row['foodName'] ?></td>
+								<td><?php echo $row['foodType'] ?></td>
+								<td><?php echo $row['foodBrand'] ?></td>
+								<td><?php echo $row['calories'] ?></td>
+								<td><?php echo $row['fat'] ?></td>
+								<td><?php echo $row['cholesterol'] ?></td>
+								<td><?php echo $row['sodium'] ?></td>
+								<td><?php echo $row['carbs'] ?></td>
+								<td><?php echo $row['protein'] ?></td>
+				   
+								<td>
+									<button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
+										class="btn btn-info">Add</button>
+							</tr>
+						<?php endwhile; ?>
+				</table>
 			</div>
 
-            <div class="form-group">
-                <label>Brand</label> <br>
-                <input type="text" name="fBrand" class="form-control" placeholder="Enter brand">
-            </div>
+		<div class="row justify-content-center"> 
+			<form action="process.php" method="POST">
+				<input type="hidden" name="id" value="<?php echo $id; ?>">
+				
+				<div class="form-row">
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label>Name</label> <br>
+							<input type="text" name="fName" class="form-control" placeholder="Enter name">
+							<?php endif; ?>
+						</div>
+					</div>
+					
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label for="exampleFormControlSelect1">Type</label>
+							<select class="form-control" name = "fType" id="exampleFormControlSelect1">
+							<option value="Fruit">Fruit</option>
+							<option value="Vegetable">Vegetable</option>
+							<option value="Meat">Meat</option>
+							<option value="Grain">Grain</option>
+							<option value="Dairy">Dairy</option>
+							<option value="Junk">Junk</option>
+							</select>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+		
+				<div class="form-group">
+					<label>Brand</label> <br>
+					<input type="text" name="fBrand" class="form-control" placeholder="Enter brand">
+				</div>
+				
+				<div class="form-row">
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label>Calories</label> <br>
+							<input type="text" name="fCalories" class="form-control" placeholder="Enter calories">
+							<?php endif; ?>
+						</div>
+					</div>
 
-            <div class="form-group">
-                <?php
-                if ($update == false):
-                ?>
-                <label>Calories</label> <br>
-                <input type="text" name="fCalories" class="form-control" placeholder="Enter calories">
-                <?php endif; ?>
-            </div>
-			
-			<div class="form-group">
-                <?php
-                if ($update == false):
-                ?>
-                <label>Fat</label> <br>
-                <input type="text" name="fFat" class="form-control" placeholder="Enter fat">
-                <?php endif; ?>
-            </div>
-			
-			<div class="form-group">
-                <?php
-                if ($update == false):
-                ?>
-                <label>Cholesterol</label> <br>
-                <input type="text" name="fCholesterol" class="form-control" placeholder="Enter cholesterol">
-                <?php endif; ?>
-            </div>
-			
-			<div class="form-group">
-                <?php
-                if ($update == false):
-                ?>
-                <label>Sodium</label> <br>
-                <input type="text" name="fSodium" class="form-control" placeholder="Enter sodium">
-                <?php endif; ?>
-            </div>
-			
-			<div class="form-group">
-                <?php
-                if ($update == false):
-                ?>
-                <label>Carbs</label> <br>
-                <input type="text" name="fCarbs" class="form-control" placeholder="Enter carbs">
-                <?php endif; ?>
-            </div>
-			
-			<div class="form-group">
-                <?php
-                if ($update == false):
-                ?>
-                <label>Protein</label> <br>
-                <input type="text" name="fProtein" class="form-control" placeholder="Enter protein">
-                <?php endif; ?>
-            </div>
-            
-            <div class="form-group">
-                <br>
-                <?php
-                if ($update == true):
-                ?>
-                    <button type="submit" class="btn btn-info" name="update">Update</button>
-                <?php else: ?>
-                    <button type="submit" class="btn btn-primary" name="save">Save</button>
-                <?php endif; ?>
-            </div>
-        </form>
-    </div>
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label>Fat</label> <br>
+							<input type="text" name="fFat" class="form-control" placeholder="Enter fat">
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-row">
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label>Cholesterol</label> <br>
+							<input type="text" name="fCholesterol" class="form-control" placeholder="Enter cholesterol">
+							<?php endif; ?>
+						</div>
+					</div>
+				
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label>Sodium</label> <br>
+							<input type="text" name="fSodium" class="form-control" placeholder="Enter sodium">
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-row">
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label>Carbs</label> <br>
+							<input type="text" name="fCarbs" class="form-control" placeholder="Enter carbs">
+							<?php endif; ?>
+						</div>
+					</div>
+				
+					<div class="col">	
+						<div class="form-group">
+							<?php
+							if ($update == false):
+							?>
+							<label>Protein</label> <br>
+							<input type="text" name="fProtein" class="form-control" placeholder="Enter protein">
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<br>
+					<?php
+					if ($update == true):
+					?>
+						<button type="submit" class="btn btn-info" name="update">Update</button>
+					<?php else: ?>
+						<button type="submit" class="btn btn-primary" name="save">Save</button>
+					<?php endif; ?>
+				</div>
+			</form>
+		</div>
     </div>
 
     <!-- Optional JavaScript -->
