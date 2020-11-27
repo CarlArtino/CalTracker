@@ -29,16 +29,16 @@
 		    if ($adding) {
 		    	array_push($_SESSION["currentMeal"], $_POST["ateFood"]);
 		    }
-			
+
 			// Remove an entry from the table
 			if (isset($_POST["removeFood"]))
 			{
 				unset($_SESSION["currentMeal"][$_POST["removeFood"]]);
-				
+
 				//This reorders the array so there will not be empty indicies
 				$_SESSION["currentMeal"] = array_values($_SESSION["currentMeal"]);
 			}
-			
+
 			// Clear entries from table if user clicked button
 			$setClear = isset($_POST["clearTable"]);
 			if($setClear)
@@ -147,13 +147,13 @@
         <form action="CalTracker.php" method="post" id="addFood"></form>
 
 		<button type="submit" form="addFood" value="Submit">Add another food</button>
-		
+
 		<div align="right">
 			<form action="MealMaker.php" method="post" id="clearTable"></form>
-			
+
 			<button type="submit" form="clearTable" name="clearTable" value="True" class="btn btn-danger">Clear the table</button>
-		</div>	
-    </div>	
+		</div>
+    </div>
 	</body>
 
 </html>

@@ -29,6 +29,10 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+    <form action="search.php" method="GET">
+       <input type="text" name="search" />
+       <input type="submit" value="Search" />
+    </form>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-md-auto">
 				<li class="nav-item active">

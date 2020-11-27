@@ -41,8 +41,14 @@
         <img src="pictures/addNew.PNG" alt="Save" width="500">
 
       <h4> Adding existing foods </h4>
-        <p> To add a food from the table to your meal, click the "add" buton, next to the food you wish to add</p>
+        <p> To add a food from the table to your meal, click the "add" buton, next to the food you wish to add
+            <br> You can also use the search bar to find foods you are looking for.</p>
         <img src="pictures/addExisting.PNG" alt="Add" width="500">
+
+      <h4> Removing food </h4>
+        <p> To remove a food from your meal, just click the "remove" button to the right of the food,
+           or to clear the whole meal, click "clear the table" </p>
+          <img src="pictures/removeClear.PNG" alt="Remove" width="500">
 
       <h4> Calculated Nutritional Information </h4>
         <p> When you're done, the "Your Current Meal" table will display all the foods you entered, the nutritional information
