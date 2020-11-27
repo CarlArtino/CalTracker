@@ -26,6 +26,7 @@
           </ul>
         </div>
       </nav>
+      <div class="container">
       <span style="padding-left:20px">
       <div class="row justify-content-center">
         <table class="table">
@@ -58,7 +59,7 @@
   		        $raw_results = $mysqli->query("SELECT * FROM foods
   			      WHERE (`foodName` LIKE '%".$query."%')") or die(mysql_error());
 
-
+            //display table of results
 			     while ($row = $raw_results->fetch_assoc()):?>
 
       <tr>
