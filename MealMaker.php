@@ -30,7 +30,16 @@
 		    	array_push($_SESSION["currentMeal"], $_POST["ateFood"]);
 		    }
 			
-			//Clear entries from table if user clicked button
+			// Remove an entry from the table
+			if (isset($_POST["removeFood"]))
+			{
+				unset($_SESSION["currentMeal"][$_POST["removeFood"]]);
+				
+				//This reorders the array so there will not be empty indicies
+				$_SESSION["currentMeal"] = array_values($_SESSION["currentMeal"]);
+			}
+			
+			// Clear entries from table if user clicked button
 			$setClear = isset($_POST["clearTable"]);
 			if($setClear)
 			{
@@ -69,8 +78,11 @@
 						<th>Sodium</th>
 						<th>Carbs</th>
 						<th>Protein</th>
+						<th colspan="2"></th>
                     </tr>
                 </thread>
+
+				<form action="MealMaker.php" method="post" id="removeFood"></form>
 
 				<?php
 				    // Add code to print list under here
@@ -109,6 +121,10 @@
 								<td><?php echo $row['sodium'] ?></td>
 								<td><?php echo $row['carbs'] ?></td>
 								<td><?php echo $row['protein'] ?></td>
+								<td>
+									<button type="submit" name="removeFood" form="removeFood" value="<?= $i ?>"
+										class="btn btn-info">Remove</button>
+								</td>
 							</tr>
 							<?php
 				    	} ?>

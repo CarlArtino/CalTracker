@@ -87,6 +87,7 @@
 								<td>
 									<button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
 										class="btn btn-info">Add</button>
+								</td>
 							</tr>
 						<?php endwhile; ?>
 				</table>
