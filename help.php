@@ -63,6 +63,13 @@
 
 	  <br>
 	  <br>
+	  <h4> Deleting existing foods </h4>
+        <p> To delete a food from the table permanently, click the "delete" buton, next to the food you wish to delete
+            <br> You can also use the search bar to find foods you are looking for and delte them from there.</p>
+        <img src="pictures/deleteExisting.PNG" alt="delete" width="500">
+
+	  <br>
+	  <br>
       <h4> Removing food </h4>
         <p> To remove a food from your meal, just click the "remove" button to the right of the food,
            or to clear the whole meal, click "clear the table" </p>
