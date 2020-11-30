@@ -4,6 +4,9 @@ function validateDelete(){
 	if (pass == "Password")
 		return true;
 	else
+	{
+		alert("Entry was not deleted");
 		return false;
+	}
 }
 
