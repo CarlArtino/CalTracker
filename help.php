@@ -29,32 +29,46 @@
         </div>
       </nav>
 
-
-      <h2>Help</h2>
+	
+	<div class="mx-auto" style="width: 1200px;">
+	
+	<br>
+    <div class="jumbotron">
+		<div class="container">
+			<h1 class="display-4">Help Page</h1>
+			<p class="lead">Instructions for understanding the basic functionality of CalTracker</p>
+		</div>
+	</div>
 
       <h4> Getting Started </h4>
         <p> To enter a meal, please add foods one at a time.
         You can either enter existing foods from the database, or input your own.
         On the home page, click "Add another food" to get started</p>
         <img src="pictures/addFood.PNG" alt="Add another food" width="500">
-
+	  
+	  <br>
       <h4> Adding New Foods </h4>
         <p>To add a new food, fill out the form under the table, then click "save"</p>
         <img src="pictures/addNew.PNG" alt="Save" width="500">
-
+		
+	  <br>
+	  <br>
       <h4> Adding existing foods </h4>
         <p> To add a food from the table to your meal, click the "add" buton, next to the food you wish to add
             <br> You can also use the search bar to find foods you are looking for.</p>
         <img src="pictures/addExisting.PNG" alt="Add" width="500">
 
+	  <br>
+	  <br>
       <h4> Removing food </h4>
         <p> To remove a food from your meal, just click the "remove" button to the right of the food,
            or to clear the whole meal, click "clear the table" </p>
           <img src="pictures/removeClear.PNG" alt="Remove" width="500">
 
+	  <br>
       <h4> Calculated Nutritional Information </h4>
         <p> When you're done, the "Your Current Meal" table will display all the foods you entered, the nutritional information
            for each food, and the total calculated values for each inputted nutritional value </p>
-
+	</div>
     </body>
 </html>
