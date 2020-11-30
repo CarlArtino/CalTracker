@@ -10,7 +10,15 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-    <?php require_once 'process.php'; ?>
+    <?php 
+	
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		
+		require_once 'process.php'; 
+		require_once 'delete.php'; 
+	 ?>
 
     <?php
 
@@ -75,6 +83,7 @@
 					</thread>
 
 					<form action="MealMaker.php" method="post" id="addFood"></form>
+					<form action="delete.php" method="post" id="deleteFood"></form>
 
 					<?php
 						while ($row = $result->fetch_assoc()): ?>
@@ -93,12 +102,14 @@
 								<td>
 									<button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
 										class="btn btn-info">Add</button>
+									<button type="submit" name="deleteFood" form="deleteFood" value="<?= $row['foodID'] ?>"
+										class="btn btn-danger">Delete</button>
 								</td>
 							</tr>
 						<?php endwhile; ?>
 				</table>
 			</div>
-
+			
 		<div class="row justify-content-center">
 			<form action="process.php" method="POST">
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
