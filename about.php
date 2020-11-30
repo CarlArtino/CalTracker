@@ -57,7 +57,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Project Report</h5>
 							<p class="card-text">This is the ISP Term Project report from Google Docs</p>
-							<a href="#" class="btn btn-success">Go</a>
+							<a href="http://localhost/isp/CalTracker/extra/ISP-Project-Final-Report.pdf" class="btn btn-success">Go</a>
 						</div>
 				</div>
 				<div class="card">
@@ -65,7 +65,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Project Presentation</h5>
 							<p class="card-text">This is the ISP Term Project group presentation from Google Slides</p>
-							<a href="#" class="btn btn-success">Go</a>
+							<a href="http://localhost/isp/CalTracker/extra/ISP-Project-Presentation.pdf" class="btn btn-success">Go</a>
 						</div>
 				</div>
 		</div>
