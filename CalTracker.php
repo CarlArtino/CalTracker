@@ -32,7 +32,7 @@
     </div>
     <?php endif ?>
 
-	<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #ffcfc2;">
 		<a class="navbar-brand" href="#">
 			<img src="pictures/logo.png" alt="logo">
 		</a>
@@ -232,7 +232,7 @@
 					?>
 						<button type="submit" class="btn btn-info" name="update">Update</button>
 					<?php else: ?>
-						<button type="submit" class="btn btn-primary" name="save">Save</button>
+						<button type="submit" class="btn btn-success" name="save">Save</button>
 					<?php endif; ?>
 				</div>
 			</form>

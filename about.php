@@ -9,8 +9,14 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
+	<style>
+		.jumbotron {
+			background-color:#ffefeb !important; 
+		}
+	</style>
+	
     <body>
-      <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #ffcfc2;">
         <a class="navbar-brand" href="#">
 			<img src="pictures/logo.png" alt="logo">
 		</a>
@@ -51,7 +57,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Project Report</h5>
 							<p class="card-text">This is the ISP Term Project report from Google Docs</p>
-							<a href="#" class="btn btn-primary">Go</a>
+							<a href="#" class="btn btn-success">Go</a>
 						</div>
 				</div>
 				<div class="card">
@@ -59,7 +65,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Project Presentation</h5>
 							<p class="card-text">This is the ISP Term Project group presentation from Google Slides</p>
-							<a href="#" class="btn btn-primary">Go</a>
+							<a href="#" class="btn btn-success">Go</a>
 						</div>
 				</div>
 		</div>
