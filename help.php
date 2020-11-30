@@ -70,8 +70,9 @@
 	  <br>
 	  <br>
 	  <h4> Deleting existing foods </h4>
-        <p> To delete a food from the table permanently, click the "delete" buton, next to the food you wish to delete
-            <br> You can also use the search bar to find foods you are looking for and delte them from there.</p>
+        <p> To delete a food from the table permanently, click the "delete" buton, next to the food you wish to delete.
+            <br> You can also use the search bar to find foods you are looking for and delte them from there.
+			<br> You will need a password to do this. </p>
         <img src="pictures/deleteExisting.PNG" alt="delete" width="500">
 
 	  <br>
