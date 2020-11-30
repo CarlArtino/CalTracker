@@ -25,6 +25,9 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/isp/CalTracker/help.php">Help</a>
             </li>
+			<li class="nav-item">
+				<a class="nav-link" href="http://localhost/isp/CalTracker/about.php">About</a>
+			</li>
           </ul>
         </div>
       </nav>
