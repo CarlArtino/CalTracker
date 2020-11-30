@@ -58,7 +58,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-md-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="http://localhost/isp/CalTracker/help.php">About</a>
+					<a class="nav-link" href="http://localhost/isp/CalTracker/help.php">Help</a>
 				</li>
 			</ul>
 		</div>

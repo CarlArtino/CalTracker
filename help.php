@@ -23,7 +23,7 @@
               <a class="nav-link" href="http://localhost/isp/CalTracker/MealMaker.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost/isp/CalTracker/help.php">About</a>
+              <a class="nav-link" href="http://localhost/isp/CalTracker/help.php">Help</a>
             </li>
           </ul>
         </div>
