@@ -151,7 +151,7 @@
 		<button type="submit" form="addFood" value="Submit">Add another food</button>
 
 		<div align="right">
-			<form action="MealMaker.php" method="post" id="clearTable"></form>
+			<form onsubmit="return confirm('Do you really want to clear the table?');" action="MealMaker.php" method="post" id="clearTable"></form>
 
 			<button type="submit" form="clearTable" name="clearTable" value="True" class="btn btn-danger">Clear the table</button>
 		</div>
