@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if(!isset($_SESSION)){
+ session_start();
+}
 
 $mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error($mysqli));
 
