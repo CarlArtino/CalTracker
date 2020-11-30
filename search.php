@@ -50,6 +50,7 @@
           </thread>
 
           <form action="MealMaker.php" method="post" id="addFood"></form>
+		  <form action="delete.php" method="post" id="deleteFood"></form>
       <?php
       //database connection
       			$mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
@@ -80,6 +81,8 @@
         <td>
           <button type="submit" name="ateFood" form="addFood" value="<?= $row['foodID'] ?>"
             class="btn btn-info">Add</button>
+		  <button type="submit" name="deleteFood" form="deleteFood" value="<?= $row['foodID'] ?>"
+			class="btn btn-danger">Delete</button>
         </td>
       </tr>
 			     <?php  endwhile; ?>
