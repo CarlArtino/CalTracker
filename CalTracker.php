@@ -85,20 +85,13 @@
 						</tr>
 					</thread>
 
+					<script src="validateAdmin.js"></script>
+
 					<form action="MealMaker.php" method="post" id="addFood"></form>
 					<form action="delete.php" method="post" id="deleteFood" onsubmit="return validateDelete()"></form>
 					
-					<script>
-						function validateDelete(){
-							var pass = prompt("Please enter password:");
-							
-							if (pass == "Password")
-								return true;
-							else
-								return false;
-						}
-					</script>
-
+					
+					
 					<?php
 						while ($row = $result->fetch_assoc()): ?>
 							<tr>

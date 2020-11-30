@@ -48,9 +48,11 @@
               <th colspan="2">Action</th>
             </tr>
           </thread>
+		  
+					<script src="validateAdmin.js"></script>
 
-          <form action="MealMaker.php" method="post" id="addFood"></form>
-		  <form action="delete.php" method="post" id="deleteFood"></form>
+					<form action="MealMaker.php" method="post" id="addFood"></form>
+					<form action="delete.php" method="post" id="deleteFood" onsubmit="return validateDelete()"></form>
       <?php
       //database connection
       			$mysqli = new mysqli('localhost', 'root', '', 'isp') or die(mysqli_error(mysqli));
